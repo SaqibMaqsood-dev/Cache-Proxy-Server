@@ -20,6 +20,5 @@ pip install -r requirments.txt
 .\proxy_venv\Scripts\Activate.ps1
 
 
-# how to run proxy server
+# how to run FastAPI proxy server
 python main.py --proxy 3000
- 
