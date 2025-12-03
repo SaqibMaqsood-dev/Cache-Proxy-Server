@@ -25,4 +25,4 @@ python main.py --proxy 3000
 
 # Project URL
 
-https://github.com/SaqibMaqsood-dev/Cache-Proxy-Server
+ https://saqibmaqsood-dev.github.io/Cache-Proxy-Server/
