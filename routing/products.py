@@ -20,7 +20,7 @@ async def get_products_by_id(id : int  ,  request : Request):
 
         if cache_key in cache:
             return JSONResponse(content=cache[cache_key], headers={"X-CACHE": "HIT"})
-
+        
         url = origin + request.url.path
         data = await  client.get(url)   
         cache[cache_key] = data.json()
