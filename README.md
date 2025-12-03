@@ -22,3 +22,7 @@ pip install -r requirments.txt
 
 # how to run FastAPI proxy server
 python main.py --proxy 3000
+
+# Project URL
+
+http://127.0.0.1:3000/docs#/
