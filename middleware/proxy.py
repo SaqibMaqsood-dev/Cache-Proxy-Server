@@ -1,27 +1,23 @@
-from fastapi import Request
+from fastapi import Request 
 from fastapi.responses import JSONResponse
 from cache import cache
-import httpx
+import httpx  
+from main import app
+    
 
-origin = "https://dummyjson.com"
-
+@app.middleware("http")
 async def proxy_cache_middleware(request: Request, call_next):
-
+    
     if request.url.path.startswith("/products"):
         cache_key = str(request.url)
-
-        # Check cache → HIT
+    
+        # Check cache → HIT 
         if cache_key in cache:
             return JSONResponse(content=cache[cache_key], headers={"X-CACHE": "HIT"})
 
-       
+    
     response = await call_next(request)
     
     # For other paths not cached → forward normally
     return response
-    
 
-
-  
-  
-  
